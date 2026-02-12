@@ -143,7 +143,7 @@ export function HeroSection() {
         </div>
 
         {/* Titulo */}
-        <div className="mb-4 overflow-hidden pb-6 animate-entry delay-300">
+        <div className="mb-4 overflow-hidden pt-2 pb-6 animate-entry delay-300">
           <h1
             className="text-4xl tracking-tight sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "'Fipps', monospace", lineHeight: "1.1" }}
