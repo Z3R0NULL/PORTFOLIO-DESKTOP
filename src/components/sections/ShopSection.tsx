@@ -4,7 +4,7 @@ import { shopProducts } from "@/data/portfolio-data";
 
 export function ShopSection() {
   return (
-    <section id="shop" className="relative py-24">
+    <section id="shop" className="relative border-t border-white/5 bg-[#0d0d0d] py-24">
       <CyberGrid className="opacity-20" />
 
       <div className="relative mx-auto max-w-6xl px-6">
