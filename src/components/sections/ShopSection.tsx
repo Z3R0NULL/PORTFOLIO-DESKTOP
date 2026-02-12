@@ -4,8 +4,8 @@ import { shopProducts } from "@/data/portfolio-data";
 
 export function ShopSection() {
   return (
-    <section id="shop" className="relative border-t border-white/5 bg-[#0d0d0d] py-24">
-      <CyberGrid className="opacity-30" />
+    <section id="shop" className="relative py-24">
+      <CyberGrid className="opacity-20" />
 
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="scroll-reveal mb-4 flex items-center justify-center gap-3">
@@ -29,37 +29,37 @@ export function ShopSection() {
               href={product.mercadoLibreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="scroll-reveal group relative flex flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-[#111111]/80 backdrop-blur-sm transition-all duration-300 hover:border-white/15 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:-translate-y-2 cursor-pointer"
+              className="scroll-reveal group relative flex flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] transition-all duration-200 hover:border-red-500/20 hover:-translate-y-1 cursor-pointer"
               style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="relative h-40 overflow-hidden bg-gradient-to-br from-red-600/10 to-gray-800/10">
-                <div className="absolute inset-0 cyber-grid opacity-30" />
-
-                <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <ShoppingBag className="h-16 w-16 text-gray-600/30 transition-all duration-300 group-hover:text-gray-500/50" />
+              {/* Image area */}
+              <div className="relative h-40 overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent">
+                <div className="absolute inset-0 flex items-center justify-center transition-all duration-200 group-hover:scale-110">
+                  <ShoppingBag className="h-16 w-16 text-white/[0.07] transition-colors duration-200 group-hover:text-red-500/20" />
                 </div>
+
+                <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
                 <div className="absolute top-3 right-3">
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-mono font-bold text-gray-300 backdrop-blur-sm border border-white/10">
+                  <span className="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] font-medium tracking-wider text-gray-500 border border-white/[0.06] uppercase transition-colors duration-200 group-hover:text-red-400/70 group-hover:border-red-500/15">
                     {product.price}
-                  </span>
-                </div>
-
-                <div className="absolute inset-0 bg-red-600/0 transition-all duration-300 group-hover:bg-red-600/10 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="flex items-center gap-2 text-white font-medium">
-                    <ExternalLink className="h-4 w-4" />
-                    Ver en MercadoLibre
                   </span>
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-4">
-                <h3 className="mb-2 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-red-400">
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="mb-2 text-lg font-semibold text-gray-200 transition-colors duration-150 group-hover:text-white">
                   {product.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="mb-4 text-sm text-gray-600 leading-relaxed">
                   {product.description}
                 </p>
+
+                <div className="flex items-center gap-1.5 border-t border-white/[0.04] pt-4 text-sm text-gray-600 transition-colors duration-150 group-hover:text-red-400">
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  <span>Ver en MercadoLibre</span>
+                </div>
               </div>
             </a>
           ))}
@@ -70,10 +70,10 @@ export function ShopSection() {
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-gray-500 transition-all duration-300 hover:text-white"
+            className="group inline-flex items-center gap-1.5 text-sm text-gray-600 transition-colors duration-150 hover:text-red-400"
           >
             <span className="font-mono text-sm">Ver todos los productos en MercadoLibre</span>
-            <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>
       </div>
