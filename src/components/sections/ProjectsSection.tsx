@@ -1,4 +1,5 @@
-import { Terminal, Shield, Bot, Home, Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { Terminal, Github, ExternalLink } from "lucide-react";
 import { CyberGrid } from "@/components/CyberGrid";
 import { projects } from "@/data/portfolio-data";
 
@@ -30,23 +31,20 @@ export function ProjectsSection() {
                 style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
               >
                 {/* Image area */}
-                <div className="relative h-44 overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent">
-                  <div className="absolute inset-0 flex items-center justify-center transition-all duration-200 group-hover:scale-110">
-                    {project.category === "ciberseguridad" && (
-                      <Shield className="h-16 w-16 text-white/[0.07] transition-colors duration-200 group-hover:text-red-500/20" />
-                    )}
-                    {project.category === "robotica" && (
-                      <Bot className="h-16 w-16 text-white/[0.07] transition-colors duration-200 group-hover:text-red-500/20" />
-                    )}
-                    {project.category === "domotica" && (
-                      <Home className="h-16 w-16 text-white/[0.07] transition-colors duration-200 group-hover:text-red-500/20" />
-                    )}
-                  </div>
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
 
                   <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
                   <div className="absolute top-3 right-3">
-                    <span className="rounded-full bg-white/[0.05] px-3 py-1 text-[10px] font-medium tracking-wider text-gray-500 border border-white/[0.06] uppercase transition-colors duration-200 group-hover:text-red-400/70 group-hover:border-red-500/15">
+                    <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-[10px] font-medium tracking-wider text-gray-300 border border-white/10 uppercase transition-colors duration-200 group-hover:text-red-400/70 group-hover:border-red-500/15">
                       {project.category}
                     </span>
                   </div>
