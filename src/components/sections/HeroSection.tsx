@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useRef } from "react";
+import { useMemo, useEffect, useRef, useState, useCallback } from "react";
 import { Terminal, Code, Cpu, Bug, Wrench, Mail, ShoppingBag, ChevronDown } from "lucide-react";
 import { CyberGrid } from "@/components/CyberGrid";
 import { floatingIcons, socialLinks } from "@/data/portfolio-data";
@@ -21,11 +21,49 @@ function seededRandom(seed: number) {
   return x - Math.floor(x);
 }
 
+const TYPEWRITER_WORDS = ["programación.", "electrónica.", "ciberseguridad."];
+const TYPING_SPEED = 100;
+const DELETING_SPEED = 60;
+const PAUSE_AFTER_TYPE = 2000;
+const PAUSE_AFTER_DELETE = 500;
+
+function useTypewriter(words: string[]) {
+  const [display, setDisplay] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplay(currentWord.slice(0, display.length + 1));
+        if (display.length + 1 === currentWord.length) {
+          setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPE);
+          return;
+        }
+      } else {
+        setDisplay(currentWord.slice(0, display.length - 1));
+        if (display.length - 1 === 0) {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+          return;
+        }
+      }
+    }, isDeleting ? DELETING_SPEED : TYPING_SPEED);
+
+    return () => clearTimeout(timeout);
+  }, [display, isDeleting, wordIndex, words]);
+
+  return display;
+}
+
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
-  const rafRef = useRef<number>(0);
+    const sectionRef = useRef<HTMLElement>(null);
+    const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const mouseRef = useRef({ x: -1000, y: -1000 });
+    const rafRef = useRef<number>(0);
+    const typedText = useTypewriter(TYPEWRITER_WORDS);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -176,11 +214,11 @@ export function HeroSection() {
         </div>
 
         {/* Descripcion */}
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed animate-entry delay-500">
-          Apasionado por la <span className="text-white font-medium">programación</span>, la{" "}
-          <span className="text-white font-medium">electrónica</span> y la{" "}
-          <span className="text-white font-medium">ciberseguridad</span>.
-        </p>
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed animate-entry delay-500">
+            Apasionado por la{" "}
+            <span className="text-white font-medium">{typedText}</span>
+            <span className="animate-terminal-blink font-bold text-red-500">|</span>
+          </p>
 
         {/* Botones */}
         <div className="flex flex-wrap items-center justify-center gap-4 animate-entry delay-600">
