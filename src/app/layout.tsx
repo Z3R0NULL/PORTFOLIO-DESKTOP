@@ -17,9 +17,9 @@ import Script from "next/script";
 
 // Metadatos SEO de la página
 export const metadata: Metadata = {
-  title: "Z3R0NULL | Security Researcher & Developer",
+  title: "Z3R0NULL | Developer",
   description:
-    "Portafolio de Z3R0NULL — Programación, electrónica y ciberseguridad.",
+    "Portfolio — Developed by Z3R0NULL",
 };
 
 export default function RootLayout({
