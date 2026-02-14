@@ -187,7 +187,7 @@ export function HeroSection() {
             style={{ fontFamily: "'Fipps', monospace", lineHeight: "1.1" }}
           >
             <span className="relative inline-block">
-              <span style={{ color: "#dc2626" }}>Z3RØ</span>
+              <span style={{ color: "#e20303" }}>Z3RØ</span>
               <span className="transition-colors duration-500 hover:text-white" style={{ color: "#737373" }}>
                 NULL
               </span>
