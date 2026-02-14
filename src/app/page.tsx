@@ -49,6 +49,7 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ShopSection } from "@/components/sections/ShopSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/sections/Footer";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 export default function Portfolio() {
   // Hook que activa animaciones de aparición al hacer scroll
@@ -56,7 +57,8 @@ export default function Portfolio() {
   const scrollRef = useScrollReveal();
 
   return (
-    <div ref={scrollRef} className="min-h-screen bg-[#0a0a0a] text-white">
+    <div ref={scrollRef} className="relative min-h-screen bg-[#0a0a0a] text-white">
+      <ParticlesBackground />
       {/* Sección principal con logo, título y botones de acción */}
       <HeroSection />
 
