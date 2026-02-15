@@ -194,23 +194,23 @@ export function HeroSection() {
           </h1>
         </div>
 
-        {/* Subtitulos con roles */}
-        <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-gray-400 animate-entry delay-400">
-          <div className="flex items-center gap-2">
-            <Code className="h-5 w-5 text-red-500" />
-            <span className="font-mono text-sm tracking-wider">DEVELOPER</span>
+          {/* Subtitulos con roles - barra estilo terminal */}
+            <div className="mb-6 inline-flex items-center gap-4 sm:gap-6 px-6 py-3 animate-entry delay-400">
+            <div className="flex items-center gap-2 text-gray-300">
+              <Code className="h-4 w-4 text-red-500" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Developer</span>
+            </div>
+            <span className="font-mono text-gray-600 text-xs">///</span>
+            <div className="flex items-center gap-2 text-gray-300">
+              <Cpu className="h-4 w-4 text-red-500" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Maker</span>
+            </div>
+            <span className="font-mono text-gray-600 text-xs">///</span>
+            <div className="flex items-center gap-2 text-gray-300">
+              <Bug className="h-4 w-4 text-red-500" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Security</span>
+            </div>
           </div>
-          <span className="hidden sm:inline text-gray-600">|</span>
-          <div className="flex items-center gap-2">
-            <Cpu className="h-5 w-5 text-red-500" />
-            <span className="font-mono text-sm tracking-wider">MAKER</span>
-          </div>
-          <span className="hidden sm:inline text-gray-600">|</span>
-          <div className="flex items-center gap-2">
-            <Bug className="h-5 w-5 text-red-500" />
-            <span className="font-mono text-sm tracking-wider">SECURITY</span>
-          </div>
-        </div>
 
         {/* Descripcion */}
           <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed animate-entry delay-500">
