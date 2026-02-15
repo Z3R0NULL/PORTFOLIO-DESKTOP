@@ -165,7 +165,7 @@ export function HeroSection() {
       <div className="max-w-4xl text-center relative z-10">
         {/* Logo */}
         <div className="mx-auto h-24 w-24 sm:h-28 sm:w-28 relative flex items-center justify-center mb-8 animate-entry-scale">
-          <div className="absolute inset-[-8px] rounded-full bg-red-600/20 blur-xl animate-pulse-glow pointer-events-none" />
+          <div className="absolute inset-[-1px] rounded-full bg-red-600/2 blur-[2px] animate-pulse-glow pointer-events-none" />
             <img
               src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/eefe8903-79f5-459c-9ae9-dcb210b1e70a/logo-1770396517506.png?width=8000&height=8000&resize=contain"
               alt="Z3RØNULL Logo"

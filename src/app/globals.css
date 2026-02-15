@@ -148,7 +148,7 @@ a, button, [role="button"], input[type="submit"], select, summary, [tabindex]:no
 .anim-icon-levitate { animation: icon-levitate ease-in-out infinite; }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 5s ease-in-out infinite;
 }
 
 .animate-float {
