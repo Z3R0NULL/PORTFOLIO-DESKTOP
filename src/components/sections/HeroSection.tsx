@@ -1,7 +1,16 @@
 "use client";
 
 import { useMemo, useEffect, useRef, useState, useCallback } from "react";
-import { Terminal, Code, Cpu, Bug, Wrench, Mail, ShoppingBag, ChevronDown } from "lucide-react";
+import {
+  Terminal,
+  Code,
+  Cpu,
+  Bug,
+  Wrench,
+  Mail,
+  ShoppingBag,
+  ChevronDown,
+} from "lucide-react";
 import { CyberGrid } from "@/components/CyberGrid";
 import { floatingIcons, socialLinks } from "@/data/portfolio-data";
 
@@ -35,22 +44,25 @@ function useTypewriter(words: string[]) {
   useEffect(() => {
     const currentWord = words[wordIndex];
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplay(currentWord.slice(0, display.length + 1));
-        if (display.length + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPE);
-          return;
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setDisplay(currentWord.slice(0, display.length + 1));
+          if (display.length + 1 === currentWord.length) {
+            setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPE);
+            return;
+          }
+        } else {
+          setDisplay(currentWord.slice(0, display.length - 1));
+          if (display.length - 1 === 0) {
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % words.length);
+            return;
+          }
         }
-      } else {
-        setDisplay(currentWord.slice(0, display.length - 1));
-        if (display.length - 1 === 0) {
-          setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
-          return;
-        }
-      }
-    }, isDeleting ? DELETING_SPEED : TYPING_SPEED);
+      },
+      isDeleting ? DELETING_SPEED : TYPING_SPEED,
+    );
 
     return () => clearTimeout(timeout);
   }, [display, isDeleting, wordIndex, words]);
@@ -59,11 +71,11 @@ function useTypewriter(words: string[]) {
 }
 
 export function HeroSection() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const mouseRef = useRef({ x: -1000, y: -1000 });
-    const rafRef = useRef<number>(0);
-    const typedText = useTypewriter(TYPEWRITER_WORDS);
+  const sectionRef = useRef<HTMLElement>(null);
+  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mouseRef = useRef({ x: -1000, y: -1000 });
+  const rafRef = useRef<number>(0);
+  const typedText = useTypewriter(TYPEWRITER_WORDS);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -122,14 +134,19 @@ export function HeroSection() {
   const iconAnimations = useMemo(
     () =>
       floatingIcons.map((_, i) => ({
-        anim: FLOAT_ANIMATIONS[Math.floor(seededRandom(i * 7) * FLOAT_ANIMATIONS.length)],
-          duration: 5 + seededRandom(i * 13) * 7,
+        anim: FLOAT_ANIMATIONS[
+          Math.floor(seededRandom(i * 7) * FLOAT_ANIMATIONS.length)
+        ],
+        duration: 5 + seededRandom(i * 13) * 7,
       })),
-    []
+    [],
   );
 
   return (
-    <section ref={sectionRef} className="relative flex min-h-screen flex-col items-center justify-center px-6 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 overflow-hidden"
+    >
       <CyberGrid className="opacity-50" />
 
       {/* Orbes de gradiente animados */}
@@ -143,40 +160,44 @@ export function HeroSection() {
 
       {/* Iconos flotantes decorativos */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {floatingIcons.map((item, index) => (
-              <div
-                key={index}
-                ref={(el) => { iconRefs.current[index] = el; }}
-                className={`absolute ${iconAnimations[index].anim}`}
-                style={{
-                  left: `${item.x}%`,
-                  top: `${item.y}%`,
-                  animationDelay: item.delay,
-                  animationDuration: `${iconAnimations[index].duration.toFixed(1)}s`,
-                  opacity: 0.05,
-                }}
-              >
-                <item.icon className="h-10 w-10" style={{ color: "#9ca3af" }} />
-              </div>
-          ))}
+        {floatingIcons.map((item, index) => (
+          <div
+            key={index}
+            ref={(el) => {
+              iconRefs.current[index] = el;
+            }}
+            className={`absolute ${iconAnimations[index].anim}`}
+            style={{
+              left: `${item.x}%`,
+              top: `${item.y}%`,
+              animationDelay: item.delay,
+              animationDuration: `${iconAnimations[index].duration.toFixed(1)}s`,
+              opacity: 0.05,
+            }}
+          >
+            <item.icon className="h-10 w-10" style={{ color: "#9ca3af" }} />
+          </div>
+        ))}
       </div>
 
       {/* Contenido principal */}
       <div className="max-w-4xl text-center relative z-10">
         {/* Logo */}
         <div className="mx-auto h-24 w-24 sm:h-28 sm:w-28 relative flex items-center justify-center mb-8 animate-entry-scale">
-            <img
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/eefe8903-79f5-459c-9ae9-dcb210b1e70a/logo-1770396517506.png?width=8000&height=8000&resize=contain"
-              alt="Z3RØNULL Logo"
-              className="h-full w-full object-contain relative z-10 rounded-full ring-2 ring-red-500/60 ring-offset-2 ring-offset-black"
-            />
+          <img
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/eefe8903-79f5-459c-9ae9-dcb210b1e70a/logo-1770396517506.png?width=8000&height=8000&resize=contain"
+            alt="Z3RØNULL Logo"
+            className="h-full w-full object-contain relative z-10 rounded-full ring-2 ring-red-500/60 ring-offset-2 ring-offset-black"
+          />
         </div>
 
         {/* Badge terminal */}
-            <div className="mb-4 relative z-10 inline-flex items-center gap-2 rounded-full border border-gray-600/50 bg-white/5 px-4 py-2 text-sm font-mono text-gray-300 backdrop-blur-sm transition-colors duration-75 hover:bg-white/10 hover:border-gray-500 animate-entry delay-200">
+        <div className="mb-4 relative z-10 inline-flex items-center gap-2 rounded-full border border-gray-600/50 bg-white/5 px-4 py-2 text-sm font-mono text-gray-300 backdrop-blur-sm transition-colors duration-75 hover:bg-white/10 hover:border-gray-500 animate-entry delay-200">
           <Terminal className="h-4 w-4 animate-pulse text-red-500" />
           <span className="typing-effect">~/portfolio</span>
-          <span className="animate-terminal-blink font-bold text-red-500">_</span>
+          <span className="animate-terminal-blink font-bold text-red-500">
+            _
+          </span>
         </div>
 
         {/* Titulo */}
@@ -187,37 +208,48 @@ export function HeroSection() {
           >
             <span className="relative inline-block">
               <span style={{ color: "#e20303" }}>Z3RØ</span>
-              <span className="transition-colors duration-500 hover:text-white" style={{ color: "#737373" }}>
+              <span
+                className="transition-colors duration-500 hover:text-white"
+                style={{ color: "#737373" }}
+              >
                 NULL
               </span>
             </span>
           </h1>
         </div>
 
-          {/* Subtitulos con roles - barra estilo terminal */}
-            <div className="mb-6 inline-flex items-center gap-4 sm:gap-6 px-6 py-3 animate-entry delay-400">
-            <div className="flex items-center gap-2 text-gray-300">
-              <Code className="h-4 w-4 text-red-500" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Developer</span>
-            </div>
-            <span className="font-mono text-gray-600 text-xs">///</span>
-            <div className="flex items-center gap-2 text-gray-300">
-              <Cpu className="h-4 w-4 text-red-500" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Maker</span>
-            </div>
-            <span className="font-mono text-gray-600 text-xs">///</span>
-            <div className="flex items-center gap-2 text-gray-300">
-              <Bug className="h-4 w-4 text-red-500" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">Security</span>
-            </div>
+        {/* Subtitulos con roles - barra estilo terminal */}
+        <div className="mb-6 inline-flex items-center gap-4 sm:gap-6 px-6 py-3 animate-entry delay-400">
+          <div className="flex items-center gap-2 text-gray-300">
+            <Code className="h-4 w-4 text-red-500" />
+            <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+              Developer
+            </span>
           </div>
+          <span className="font-mono text-gray-600 text-xs">///</span>
+          <div className="flex items-center gap-2 text-gray-300">
+            <Cpu className="h-4 w-4 text-red-500" />
+            <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+              Maker
+            </span>
+          </div>
+          <span className="font-mono text-gray-600 text-xs">///</span>
+          <div className="flex items-center gap-2 text-gray-300">
+            <Bug className="h-4 w-4 text-red-500" />
+            <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+              Security
+            </span>
+          </div>
+        </div>
 
         {/* Descripcion */}
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed animate-entry delay-500">
-            Apasionado por la{" "}
-            <span className="text-white font-medium">{typedText}</span>
-            <span className="animate-terminal-blink font-bold text-red-500">|</span>
-          </p>
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed animate-entry delay-500">
+          Apasionado por la{" "}
+          <span className="text-white font-medium">{typedText}</span>
+          <span className="animate-terminal-blink font-bold text-red-500">
+            |
+          </span>
+        </p>
 
         {/* Botones */}
         <div className="flex flex-wrap items-center justify-center gap-4 animate-entry delay-600">
@@ -261,7 +293,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-              <span className="absolute inset-0" />
+            <span className="absolute inset-0" />
             <social.icon className="relative h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
           </a>
         ))}

@@ -5,7 +5,10 @@ import { shopProducts } from "@/data/portfolio-data";
 
 export function ShopSection() {
   return (
-    <section id="shop" className="relative border-t border-white/5 bg-[#0d0d0d] py-24">
+    <section
+      id="shop"
+      className="relative border-t border-white/5 bg-[#0d0d0d] py-24"
+    >
       <CyberGrid className="opacity-20" />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -34,24 +37,24 @@ export function ShopSection() {
               style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
             >
               {/* Image area */}
-                <div className="relative h-40 overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-black/50" />
+              <div className="relative h-40 overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-black/50" />
 
-                  <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-                  <div className="absolute top-3 right-3">
-                    <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-[10px] font-medium tracking-wider text-gray-300 border border-white/10 uppercase transition-colors duration-200 group-hover:text-red-400/70 group-hover:border-red-500/15">
-                      {product.price}
-                    </span>
-                  </div>
+                <div className="absolute top-3 right-3">
+                  <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-[10px] font-medium tracking-wider text-gray-300 border border-white/10 uppercase transition-colors duration-200 group-hover:text-red-400/70 group-hover:border-red-500/15">
+                    {product.price}
+                  </span>
                 </div>
+              </div>
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-5">
@@ -78,7 +81,9 @@ export function ShopSection() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 text-sm text-gray-600 transition-colors duration-150 hover:text-red-400"
           >
-            <span className="font-mono text-sm">Ver todos los productos en MercadoLibre</span>
+            <span className="font-mono text-sm">
+              Ver todos los productos en MercadoLibre
+            </span>
             <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>

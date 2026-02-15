@@ -19,8 +19,8 @@ export function ContactSection() {
           className="scroll-reveal mx-auto mb-10 max-w-xl text-gray-500"
           style={{ transitionDelay: "0.1s" }}
         >
-          ¿Tienes un proyecto de hardware, seguridad o automatización en mente? ¿Quieres colaborar?
-          No dudes en contactarme.
+          ¿Tienes un proyecto de hardware, seguridad o automatización en mente?
+          ¿Quieres colaborar? No dudes en contactarme.
         </p>
 
         <div className="scroll-reveal" style={{ transitionDelay: "0.2s" }}>

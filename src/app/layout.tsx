@@ -18,8 +18,7 @@ import Script from "next/script";
 // Metadatos SEO de la página
 export const metadata: Metadata = {
   title: "Z3R0NULL | Developer",
-  description:
-    "Portfolio — Developed by Z3R0NULL",
+  description: "Portfolio — Developed by Z3R0NULL",
 };
 
 export default function RootLayout({
@@ -29,6 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link
+          rel="preload"
+          href="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/eefe8903-79f5-459c-9ae9-dcb210b1e70a/Fipps-Regular-1770396520804.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="antialiased">
         {/* Script de Orchids para capturar logs del navegador */}
         <Script

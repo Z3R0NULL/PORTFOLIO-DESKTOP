@@ -42,7 +42,7 @@ export function useScrollReveal() {
           }
         });
       },
-      { threshold: 0.15 } // Se activa cuando el 15% del elemento es visible
+      { threshold: 0.15 }, // Se activa cuando el 15% del elemento es visible
     );
 
     // Buscar todos los hijos con la clase "scroll-reveal" y observarlos

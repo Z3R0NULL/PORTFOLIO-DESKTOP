@@ -16,10 +16,32 @@
  */
 
 import {
-  Shield, Cpu, Wifi, Home, Printer, Bot, Terminal,
-  Lock, Eye, Bug, Fingerprint, Key, Radio, Zap,
-  CircuitBoard, Code, Binary, Braces, Network, FileCode, Hash, Cog,
-  Github, Facebook, Youtube, Instagram,
+  Shield,
+  Cpu,
+  Wifi,
+  Home,
+  Printer,
+  Bot,
+  Terminal,
+  Lock,
+  Eye,
+  Bug,
+  Fingerprint,
+  Key,
+  Radio,
+  Zap,
+  CircuitBoard,
+  Code,
+  Binary,
+  Braces,
+  Network,
+  FileCode,
+  Hash,
+  Cog,
+  Github,
+  Facebook,
+  Youtube,
+  Instagram,
 } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/TikTokIcon";
 
@@ -35,7 +57,8 @@ export const projects = [
       "Dispositivo de hardware para pruebas de seguridad WiFi. Detecta redes vulnerables y realiza auditorías de autenticación.",
     tags: ["ESP32", "Python", "Ciberseguridad"],
     category: "ciberseguridad",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -45,7 +68,8 @@ export const projects = [
       "Robot autónomo con sensores infrarrojos que sigue trayectorias. Chasis impreso en 3D y controlado por Arduino.",
     tags: ["Arduino", "C++", "Impresión 3D"],
     category: "robotica",
-    image: "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -55,7 +79,8 @@ export const projects = [
       "Herramienta de análisis de seguridad Bluetooth. Escanea dispositivos y detecta vulnerabilidades de autenticación.",
     tags: ["Python", "Bluetooth", "Raspberry Pi"],
     category: "ciberseguridad",
-    image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -65,7 +90,8 @@ export const projects = [
       "Automatización del hogar con control de luces, temperatura y seguridad. Interfaz web y control por voz.",
     tags: ["ESP8266", "MQTT", "Home Assistant"],
     category: "domotica",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -75,7 +101,8 @@ export const projects = [
       "Script en Python para detectar y analizar actividad sospechosa de keyloggers en sistemas Windows/Linux.",
     tags: ["Python", "Seguridad", "Análisis"],
     category: "ciberseguridad",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -85,7 +112,8 @@ export const projects = [
       "Brazo robótico de 6 ejes con piezas impresas en 3D. Control mediante joystick y programación de movimientos.",
     tags: ["Arduino", "Servos", "Impresión 3D"],
     category: "robotica",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
     github: "#",
     demo: "#",
   },
@@ -100,7 +128,12 @@ export const skills = [
   {
     name: "Ciberseguridad",
     icon: Shield,
-    items: ["Pentesting", "Análisis de redes", "WiFi/Bluetooth Security", "Python scripting"],
+    items: [
+      "Pentesting",
+      "Análisis de redes",
+      "WiFi/Bluetooth Security",
+      "Python scripting",
+    ],
   },
   {
     name: "Electrónica",
@@ -120,7 +153,12 @@ export const skills = [
   {
     name: "Redes",
     icon: Wifi,
-    items: ["WiFi hacking", "Bluetooth LE", "Protocolos IoT", "Análisis de tráfico"],
+    items: [
+      "WiFi hacking",
+      "Bluetooth LE",
+      "Protocolos IoT",
+      "Análisis de tráfico",
+    ],
   },
   {
     name: "Fabricación",
@@ -172,28 +210,32 @@ export const shopProducts = [
     title: "WiFi Deauther V3",
     description: "Dispositivo listo para usar. Incluye case impreso en 3D.",
     price: "$15.000",
-    image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop",
     mercadoLibreUrl: "#",
   },
   {
     title: "Bad USB Rubber Ducky",
     description: "Herramienta de pentesting con scripts personalizables.",
     price: "$8.500",
-    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
     mercadoLibreUrl: "#",
   },
   {
     title: "ESP32 Dev Kit",
     description: "Kit completo con sensores y componentes para proyectos IoT.",
     price: "$12.000",
-    image: "https://images.unsplash.com/photo-1608564697071-ddf911d81370?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1608564697071-ddf911d81370?w=600&h=400&fit=crop",
     mercadoLibreUrl: "#",
   },
   {
     title: "Brazo Robótico Mini",
     description: "Brazo robótico ensamblado con Arduino y control remoto.",
     price: "$25.000",
-    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&h=400&fit=crop",
     mercadoLibreUrl: "#",
   },
 ];
