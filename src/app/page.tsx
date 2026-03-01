@@ -47,6 +47,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ShopSection } from "@/components/sections/ShopSection";
+import { VideosSection } from "@/components/sections/VideosSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/sections/Footer";
 
@@ -68,6 +69,9 @@ export default function Portfolio() {
 
       {/* Productos disponibles para comprar */}
       <ShopSection />
+
+      {/* Sección de videos de YouTube */}
+      <VideosSection />
 
       {/* Información de contacto y redes sociales */}
       <ContactSection />
