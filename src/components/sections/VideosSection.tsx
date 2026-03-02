@@ -11,7 +11,7 @@ export function VideosSection() {
         <div className="scroll-reveal mb-4 flex items-center justify-center gap-3">
           <Youtube className="h-6 w-6 text-red-600" />
           <h2 className="text-center text-3xl font-bold sm:text-4xl text-white">
-            Videos de YouTube
+            Videos
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export function VideosSection() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-                
+
                 {/* Decorative overlay for consistent look */}
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
               </div>
@@ -69,7 +69,7 @@ export function VideosSection() {
                   </a>
                 </div>
               </div>
-              
+
               {/* Bottom accent bar */}
               <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-red-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
@@ -77,7 +77,10 @@ export function VideosSection() {
         </div>
 
         {/* Call to action */}
-        <div className="mt-16 text-center scroll-reveal" style={{ transitionDelay: "0.5s" }}>
+        <div
+          className="mt-16 text-center scroll-reveal"
+          style={{ transitionDelay: "0.5s" }}
+        >
           <a
             href="https://youtube.com/@Z3R0NULL"
             target="_blank"
