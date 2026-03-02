@@ -42,6 +42,7 @@
  * ============================================================
  */
 
+import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -52,6 +53,11 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Portfolio() {
+  // Scroll al inicio en cada carga/recarga de página
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   // Hook que activa animaciones de aparición al hacer scroll
   // Se asigna al contenedor principal para observar todos los hijos
   const scrollRef = useScrollReveal();
