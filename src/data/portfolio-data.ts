@@ -301,7 +301,7 @@ export const socialLinks = [
 // Cada video tiene un ID de YouTube, título y descripción.
 export const youtubeVideos = [
   {
-    id: "IT1uBUsOmUY", // Ejemplo de ID de video (Rick Roll)
+    id: "IT1uBUsOmUY", // Ejemplo de ID de video
     title: "Mi Primer Proyecto de Robótica",
     description: "Una breve demostración de mi primer brazo robótico funcional.",
   },
