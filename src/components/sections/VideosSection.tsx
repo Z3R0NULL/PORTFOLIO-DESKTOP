@@ -32,19 +32,22 @@ export function VideosSection() {
               className="scroll-reveal group relative flex flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] transition-all duration-200 hover:border-red-500/20 hover:-translate-y-1"
               style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
             >
-              {/* Video Embed */}
-              <div className="relative aspect-video overflow-hidden bg-black">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  className="absolute inset-0 h-full w-full border-0 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {/* Video Thumbnail */}
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-video overflow-hidden bg-black"
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                    alt={video.title}
+                    className="absolute inset-0 h-full w-full object-cover opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
+                  />
 
-                {/* Decorative overlay for consistent look */}
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-              </div>
+                  {/* Decorative overlay for consistent look */}
+                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                </a>
 
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-6">
