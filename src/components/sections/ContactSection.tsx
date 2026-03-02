@@ -4,7 +4,10 @@ import { socialLinks } from "@/data/portfolio-data";
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="relative border-t border-white/5 py-24">
+    <section
+      id="contacto"
+      className="relative border-t border-white/5 bg-[#0d0d0d] py-24"
+    >
       <CyberGrid className="opacity-30" />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
