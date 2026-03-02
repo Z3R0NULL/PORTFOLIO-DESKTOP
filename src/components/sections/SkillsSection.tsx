@@ -102,59 +102,62 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Iconos de lenguajes de programación */}
-        <div
-          className="scroll-reveal mt-16 rounded-xl border border-white/[0.06] bg-[#111111]/60 px-8 py-6"
-          style={{ transitionDelay: "0.8s" }}
-        >
-          <p className="mb-5 text-center text-xs font-medium uppercase tracking-widest text-gray-600">
-            Lenguajes
-          </p>
-          <div className="grid grid-cols-5 gap-4 sm:grid-cols-5 lg:grid-cols-10 max-w-3xl mx-auto">
-            {languageIcons.map((lang) => (
-              <div
-                key={lang.name}
-                className="group/lang flex flex-col items-center gap-1.5 transition-all duration-200 hover:-translate-y-1"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] transition-all duration-200 group-hover/lang:border-white/15 group-hover/lang:bg-white/[0.06]">
-                  <lang.icon
-                    className="h-[18px] w-[18px] transition-colors duration-200"
-                    style={{ color: lang.color }}
-                  />
+        {/* Lenguajes y Tecnologías */}
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+          {/* Iconos de lenguajes de programación */}
+          <div
+            className="scroll-reveal rounded-xl border border-white/[0.06] bg-[#111111]/60 px-6 py-6"
+            style={{ transitionDelay: "0.8s" }}
+          >
+            <p className="mb-6 text-center text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
+              Lenguajes
+            </p>
+            <div className="grid grid-cols-5 gap-y-6 gap-x-2 max-w-sm mx-auto justify-items-center">
+              {languageIcons.map((lang) => (
+                <div
+                  key={lang.name}
+                  className="group/lang flex flex-col items-center gap-2 transition-all duration-200 hover:-translate-y-1"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] transition-all duration-200 group-hover/lang:border-white/15 group-hover/lang:bg-white/[0.06]">
+                    <lang.icon
+                      className="h-5 w-5 transition-all duration-300 text-gray-400 grayscale opacity-30 brightness-[0.8] group-hover/lang:text-[var(--hover-color)] group-hover/lang:grayscale-0 group-hover/lang:opacity-100 group-hover/lang:brightness-100 group-hover/lang:scale-110"
+                      style={{ "--hover-color": lang.color } as React.CSSProperties}
+                    />
+                  </div>
+                  <span className="text-[10px] font-medium text-gray-600 transition-colors duration-200 group-hover/lang:text-gray-400">
+                    {lang.name}
+                  </span>
                 </div>
-                <span className="text-[10px] font-medium text-gray-600 transition-colors duration-200 group-hover/lang:text-gray-400">
-                  {lang.name}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Tecnologías */}
-        <div
-          className="scroll-reveal mt-6 rounded-xl border border-white/[0.06] bg-[#111111]/60 px-8 py-6"
-          style={{ transitionDelay: "0.9s" }}
-        >
-          <p className="mb-5 text-center text-xs font-medium uppercase tracking-widest text-gray-600">
-            Tecnologías
-          </p>
-          <div className="grid grid-cols-5 gap-4 sm:grid-cols-5 lg:grid-cols-10 max-w-3xl mx-auto">
-            {techIcons.map((tech) => (
-              <div
-                key={tech.name}
-                className="group/lang flex flex-col items-center gap-1.5 transition-all duration-200 hover:-translate-y-1"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] transition-all duration-200 group-hover/lang:border-white/15 group-hover/lang:bg-white/[0.06]">
-                  <tech.icon
-                    className="h-[18px] w-[18px] transition-colors duration-200"
-                    style={{ color: tech.color }}
-                  />
+          {/* Tecnologías */}
+          <div
+            className="scroll-reveal rounded-xl border border-white/[0.06] bg-[#111111]/60 px-6 py-6"
+            style={{ transitionDelay: "0.9s" }}
+          >
+            <p className="mb-6 text-center text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
+              Tecnologías
+            </p>
+            <div className="grid grid-cols-5 gap-y-6 gap-x-2 max-w-sm mx-auto justify-items-center">
+              {techIcons.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="group/lang flex flex-col items-center gap-2 transition-all duration-200 hover:-translate-y-1"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] transition-all duration-200 group-hover/lang:border-white/15 group-hover/lang:bg-white/[0.06]">
+                    <tech.icon
+                      className="h-5 w-5 transition-all duration-300 text-gray-400 grayscale opacity-30 brightness-[0.8] group-hover/lang:text-[var(--hover-color)] group-hover/lang:grayscale-0 group-hover/lang:opacity-100 group-hover/lang:brightness-100 group-hover/lang:scale-110"
+                      style={{ "--hover-color": tech.color } as React.CSSProperties}
+                    />
+                  </div>
+                  <span className="text-[10px] font-medium text-gray-600 transition-colors duration-200 group-hover/lang:text-gray-400">
+                    {tech.name}
+                  </span>
                 </div>
-                <span className="text-[10px] font-medium text-gray-600 transition-colors duration-200 group-hover/lang:text-gray-400">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
