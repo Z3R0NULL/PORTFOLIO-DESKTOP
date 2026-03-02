@@ -301,17 +301,17 @@ export const socialLinks = [
 // Cada video tiene un ID de YouTube, título y descripción.
 export const youtubeVideos = [
   {
-    id: "dQw4w9WgXcQ", // Ejemplo de ID de video (Rick Roll)
+    id: "IT1uBUsOmUY", // Ejemplo de ID de video (Rick Roll)
     title: "Mi Primer Proyecto de Robótica",
     description: "Una breve demostración de mi primer brazo robótico funcional.",
   },
   {
-    id: "kJQP7kiw5Fk", // Ejemplo de ID de video
+    id: "VeMaF27B0nA", // Ejemplo de ID de video
     title: "Auditoría WiFi con ESP32",
     description: "Cómo utilizar el WiFi Deauther para pruebas de penetración.",
   },
   {
-    id: "jNQXAC9IVRw", // Ejemplo de ID de video
+    id: "gpB4600keWA", // Ejemplo de ID de video
     title: "Automatización con Home Assistant",
     description: "Configuración básica para controlar luces y temperatura.",
   },
